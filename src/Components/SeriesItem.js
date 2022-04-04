@@ -1,29 +1,19 @@
 import React from 'react';
 import {
-  Text, TouchableOpacity, View, StyleSheet,
+  Text, TouchableOpacity, Image,
 } from 'react-native';
-
-const styles = StyleSheet.create({
-  view: {
-    flexDirection: 'row',
-  },
-  rating: {
-    paddingVertical: 5,
-  },
-});
 
 function SeriesItem(props) {
   const {
-    id, handlePress, name, first_air_date: date, vote_average: vote,
+    id, handlePress, name, first_air_date: date, vote_average: vote, poster_path: imagePath,
   } = props;
 
   return (
     <TouchableOpacity onPress={() => handlePress(id)}>
-      <View style={styles.view}>
-        <Text>{name}</Text>
-        <Text>{date}</Text>
-        <Text>{vote}</Text>
-      </View>
+      <Image source={{ uri: `https://image.tmdb.org/t/p/w200/${imagePath}` }} />
+      <Text>{name}</Text>
+      <Text>{date}</Text>
+      <Text>{vote}</Text>
     </TouchableOpacity>
   );
 }

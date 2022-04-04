@@ -47,6 +47,7 @@ const useSeriesListScreen = () => {
     data,
     loading,
     error,
+    page,
     ...methods,
   };
 };

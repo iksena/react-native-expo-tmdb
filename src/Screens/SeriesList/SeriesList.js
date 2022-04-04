@@ -13,17 +13,16 @@ export default function SeriesList() {
 
   return (
     <View style={styles.container}>
-      <Text>{page}</Text>
-      {console.log(data)}
+      <Text>{`Page: ${page}`}</Text>
+      <Text>kamskdmasd</Text>
       <FlatList
-        contentContainerStyle={styles.container}
         data={data}
-        renderItem={(item) => <SeriesItem {...item} />}
+        renderItem={({ item }) => <SeriesItem key={item.key} {...item} />}
         keyExtractor={(item) => `${item.id}`}
         refreshing={loading}
         onEndReached={nextPage}
         onRefresh={refresh}
-        ListEmptyComponent={<Text>Sorry</Text>}
+        ListEmptyComponent={<Text>Empty</Text>}
       />
     </View>
   );
