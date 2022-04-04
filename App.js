@@ -11,7 +11,7 @@ export default function App() {
     <NavigationContainer>
       <StatusBar style="auto" />
       <Stack.Navigator>
-        <Stack.Screen name="SeriesList" component={SeriesList} />
+        <Stack.Screen name="SeriesList" component={SeriesList} options={{ title: 'TV Shows' }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

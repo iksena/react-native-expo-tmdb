@@ -30,6 +30,7 @@ const useSeriesListScreen = () => {
   };
   const refresh = () => {
     setPage(1);
+    setData([]);
     setFetch(true);
   };
   const methods = {
