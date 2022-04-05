@@ -16,7 +16,17 @@ export default function SeriesList() {
       <Text>{`Page: ${page}`}</Text>
       <FlatList
         data={data}
-        renderItem={({ item }) => <SeriesItem key={item.key} {...item} />}
+        renderItem={({ item }) => (
+          <SeriesItem
+            key={item.key}
+            id={item.id}
+            title={item.name}
+            date={item.first_air_date}
+            vote={item.vote_average}
+            imagePath={item.poster_path}
+            handlePress={() => {}}
+          />
+        )}
         keyExtractor={(item) => `${item.id}`}
         refreshing={loading}
         onEndReached={nextPage}

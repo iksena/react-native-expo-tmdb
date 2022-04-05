@@ -8,14 +8,13 @@ import styles from './SeriesItem.styles';
 
 function SeriesItem(props) {
   const {
-    id, handlePress, name, first_air_date: date, vote_average: vote, poster_path: imagePath,
+    id, handlePress, title, date, vote, imagePath,
   } = props;
 
   return (
     <TouchableOpacity onPress={() => handlePress(id)}>
       <View styles={styles.container}>
         <Image
-          style={styles.image}
           source={{
             uri: `https://image.tmdb.org/t/p/w200${imagePath}`,
             width: 50,
@@ -23,13 +22,11 @@ function SeriesItem(props) {
           }}
           resizeMode="cover"
         />
-        <View style={styles.content}>
-          <Text style={styles.textTitle}>{name}</Text>
+        <View>
+          <Text style={styles.textTitle}>{title}</Text>
           <Text>{dayjs(date).format('MMM DD, YYYY')}</Text>
         </View>
-        <View style={styles.votes}>
-          <Text>{vote}</Text>
-        </View>
+        <Text>{vote}</Text>
       </View>
     </TouchableOpacity>
   );
