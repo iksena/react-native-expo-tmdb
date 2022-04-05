@@ -1,5 +1,6 @@
+import { VStack, Text } from 'native-base';
 import {
-  View, FlatList, Text,
+  FlatList,
 } from 'react-native';
 
 import SeriesItem from '../../Components/SeriesItem';
@@ -12,7 +13,7 @@ export default function SeriesList() {
   } = useSeriesListScreen();
 
   return (
-    <View style={styles.container}>
+    <VStack justifyContent="space-between" p={2}>
       <Text>{`Page: ${page}`}</Text>
       <FlatList
         data={data}
@@ -34,6 +35,6 @@ export default function SeriesList() {
         ListEmptyComponent={<Text>Empty</Text>}
         contentContainerStyle={styles.list}
       />
-    </View>
+    </VStack>
   );
 }

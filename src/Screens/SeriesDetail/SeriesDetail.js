@@ -1,6 +1,7 @@
 import {
   View, Text,
 } from 'react-native';
+import { VStack } from 'native-base';
 
 import styles from './SeriesDetail.styles';
 import useSeriesDetailScreen from './useSeriesDetail';
