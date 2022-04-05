@@ -1,19 +1,53 @@
-import { VStack, Text } from 'native-base';
+import {
+  VStack, Text, Input, Icon, HStack,
+} from 'native-base';
 import { FlatList } from 'react-native';
+import { MaterialIcons } from '@expo/vector-icons';
 
 import SeriesItem from '../../Components/SeriesItem';
 import Empty from '../../Components/Empty';
 import useSeriesListScreen from './useSeriesList';
 import Loading from '../../Components/Loading';
 
+function Search({
+  value, setValue, onClose, onSearch,
+}) {
+  return (
+    <Input
+      w="80%"
+      value={value}
+      onChangeText={setValue}
+      InputRightElement={(
+        <Icon
+          as={(
+            <MaterialIcons
+              name={value !== '' ? 'close' : 'search'}
+              onPress={value !== '' ? onClose : () => {}}
+            />
+          )}
+          size={5}
+          ml="2"
+          color="muted.500"
+        />
+      )}
+      placeholder="Search TV Shows"
+      onSubmitEditing={({ nativeEvent: { text } }) => onSearch(text)}
+      returnKeyType="search"
+    />
+  );
+}
+
 export default function SeriesList(props) {
   const {
-    data, loading, nextPage, refresh, page, handleItemPress,
+    data, loading, nextPage, refresh, page, handleItemPress, search, setSearch, handleSearch,
   } = useSeriesListScreen(props);
 
   return (
     <VStack p={2}>
-      <Text color="muted.400" alignSelf="flex-end">{`Page: ${page}`}</Text>
+      <HStack alignItems="center" justifyContent="space-between" mb={1}>
+        <Search value={search} setValue={setSearch} onClose={refresh} onSearch={handleSearch} />
+        <Text color="muted.400">{`Page: ${page}`}</Text>
+      </HStack>
       <FlatList
         data={data}
         renderItem={({ item }) => (

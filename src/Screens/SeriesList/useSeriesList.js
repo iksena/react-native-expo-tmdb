@@ -1,14 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 
 import useErrorToast from '../../Hooks/useErrorToast';
 import tmdbRequest from '../../Services/TMDB';
 
-const fetchTvPopularList = async (page, {
+const fetchTvPopularList = async (page, search, {
   setData, setPage, setLoading, setError,
 }) => {
   try {
     setLoading(true);
-    const { data } = await tmdbRequest.get(`/tv/popular?page=${page}`);
+    const url = search !== '' ? `/search/tv/?query=${search}&page=${page}` : `/tv/popular?page=${page}`;
+    const { data } = await tmdbRequest.get(url);
     setData((prevData) => [...prevData, ...data.results]);
     setPage(data?.page);
   } catch (error) {
@@ -24,29 +25,45 @@ const useSeriesListScreen = ({ navigation }) => {
   const [page, setPage] = useState(1);
   const [error, setError] = useState(null);
   const [data, setData] = useState([]);
+  const [search, setSearch] = useState('');
 
-  const nextPage = () => {
+  const nextPage = useCallback(() => {
     setPage((prevPage) => prevPage + 1);
     setFetch(true);
-  };
-  const refresh = () => {
+  });
+  const refresh = useCallback(() => {
+    setSearch('');
     setPage(1);
     setData([]);
     setFetch(true);
-  };
-  const handleItemPress = ({ id, name }) => () => {
+  });
+  const handleItemPress = useCallback(({ id, name }) => () => {
     navigation.navigate('SeriesDetail', { id, name });
-  };
+  });
+  const handleSearch = useCallback((text) => {
+    setSearch(text);
+    setPage(1);
+    setData([]);
+    setFetch(true);
+  });
   const methods = {
-    setData, setLoading, setError, setPage, nextPage, refresh, handleItemPress,
+    setData,
+    setLoading,
+    setError,
+    setPage,
+    nextPage,
+    refresh,
+    handleItemPress,
+    handleSearch,
+    setSearch,
   };
 
   useEffect(() => {
     if (shouldFetch) {
-      fetchTvPopularList(page, methods);
+      fetchTvPopularList(page, search, methods);
       setFetch(false);
     }
-  }, [shouldFetch, page]);
+  }, [shouldFetch, page, search]);
   useErrorToast(error);
 
   return {
@@ -54,6 +71,7 @@ const useSeriesListScreen = ({ navigation }) => {
     loading,
     error,
     page,
+    search,
     ...methods,
   };
 };
