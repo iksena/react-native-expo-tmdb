@@ -17,7 +17,7 @@ const fetchTvPopularList = async (page, {
   }
 };
 
-const useSeriesListScreen = () => {
+const useSeriesListScreen = ({ navigation }) => {
   const [loading, setLoading] = useState(false);
   const [shouldFetch, setFetch] = useState(true);
   const [page, setPage] = useState(1);
@@ -33,8 +33,11 @@ const useSeriesListScreen = () => {
     setData([]);
     setFetch(true);
   };
+  const handleItemPress = ({ id, name }) => () => {
+    navigation.navigate('SeriesDetail', { id, name });
+  };
   const methods = {
-    setData, setLoading, setError, setPage, nextPage, refresh,
+    setData, setLoading, setError, setPage, nextPage, refresh, handleItemPress,
   };
 
   useEffect(() => {

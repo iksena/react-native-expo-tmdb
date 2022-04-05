@@ -19,7 +19,7 @@ export default function App() {
             name="SeriesDetail"
             component={SeriesDetail}
             options={({ route }) => ({
-              title: route.params.title,
+              title: route.params.name,
             })}
           />
         </Stack.Navigator>
