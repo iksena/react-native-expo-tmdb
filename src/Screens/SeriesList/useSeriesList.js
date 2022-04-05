@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import useErrorToast from '../../Hooks/useErrorToast';
 import tmdbRequest from '../../Services/TMDB';
 
 const fetchTvPopularList = async (page, {
@@ -21,7 +22,7 @@ const useSeriesListScreen = ({ navigation }) => {
   const [loading, setLoading] = useState(false);
   const [shouldFetch, setFetch] = useState(true);
   const [page, setPage] = useState(1);
-  const [error, setError] = useState('');
+  const [error, setError] = useState(null);
   const [data, setData] = useState([]);
 
   const nextPage = () => {
@@ -46,6 +47,7 @@ const useSeriesListScreen = ({ navigation }) => {
       setFetch(false);
     }
   }, [shouldFetch, page]);
+  useErrorToast(error);
 
   return {
     data,
