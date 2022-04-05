@@ -19,7 +19,7 @@ const fetchTvDetail = async (id, {
 const useSeriesDetailScreen = ({ route }) => {
   const [loading, setLoading] = useState(false);
   const [shouldFetch, setFetch] = useState(true);
-  const [error, setError] = useState('');
+  const [error, setError] = useState(null);
   const [data, setData] = useState({});
   const refresh = () => setFetch(true);
   const methods = {
