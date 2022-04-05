@@ -44,9 +44,9 @@ export default function SeriesList(props) {
 
   return (
     <VStack p={2}>
-      <HStack alignItems="center" justifyContent="space-between" mb={1}>
+      <HStack alignItems="center" justifyContent="space-around" mb={1}>
         <Search value={search} setValue={setSearch} onClose={refresh} onSearch={handleSearch} />
-        <Text color="muted.400">{`Page: ${page}`}</Text>
+        <Text color="muted.400" fontSize="xs">{`Page: ${page}`}</Text>
       </HStack>
       <FlatList
         data={data}

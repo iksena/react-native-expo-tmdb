@@ -10,6 +10,7 @@ import useSeriesDetailScreen from './useSeriesDetail';
 import SeasonItem from '../../Components/SeasonItem';
 
 const SeasonList = ({ seasons }) => seasons.map(({
+  id,
   name,
   overview,
   poster_path: imagePath,
@@ -17,6 +18,7 @@ const SeasonList = ({ seasons }) => seasons.map(({
   episode_count: episodeCount,
 }) => (
   <SeasonItem
+    key={id}
     title={name}
     overview={overview}
     imagePath={imagePath}

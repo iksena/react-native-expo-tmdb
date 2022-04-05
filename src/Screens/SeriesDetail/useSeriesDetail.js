@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import useErrorToast from '../../Hooks/useErrorToast';
 
 import tmdbRequest from '../../Services/TMDB';
 
@@ -32,6 +33,7 @@ const useSeriesDetailScreen = ({ route }) => {
       setFetch(false);
     }
   }, [shouldFetch]);
+  useErrorToast(error);
 
   return {
     data,
