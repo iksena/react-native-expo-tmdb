@@ -25,6 +25,7 @@ export default {
     },
     android: {
       bundleIdentifier: 'lol.omg.sena',
+      package: 'lol.omg.sena',
       versionCode: 1,
       adaptiveIcon: {
         foregroundImage: './assets/adaptive-icon.png',

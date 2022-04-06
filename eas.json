@@ -1,0 +1,29 @@
+{
+  "cli": {
+    "version": ">= 0.49.0"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "android": {
+        "buildType": "apk"
+      },
+      "env": {
+        "TMDB_BASE_URL": "https://api.themoviedb.org/3",
+        "TMDB_TOKEN": ""
+      }
+    },
+    "production": {
+      "env": {
+        "TMDB_BASE_URL": "https://api.themoviedb.org/3",
+        "TMDB_TOKEN": ""
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}
