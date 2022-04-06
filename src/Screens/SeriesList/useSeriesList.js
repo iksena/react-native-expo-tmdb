@@ -31,21 +31,25 @@ const useSeriesListScreen = ({ navigation }) => {
     setPage((prevPage) => prevPage + 1);
     setFetch(true);
   });
+
   const refresh = useCallback(() => {
     setSearch('');
     setPage(1);
     setData([]);
     setFetch(true);
   });
+
   const handleItemPress = useCallback(({ id, name }) => () => {
     navigation.navigate('SeriesDetail', { id, name });
   });
-  const handleSearch = useCallback((text) => {
-    setSearch(text);
+
+  const handleSearch = useCallback(() => {
+    setSearch(search);
     setPage(1);
     setData([]);
     setFetch(true);
-  });
+  }, [search]);
+
   const methods = {
     setData,
     setLoading,
@@ -64,6 +68,7 @@ const useSeriesListScreen = ({ navigation }) => {
       setFetch(false);
     }
   }, [shouldFetch, page, search]);
+
   useErrorToast(error);
 
   return {
