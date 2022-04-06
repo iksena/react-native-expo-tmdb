@@ -1,0 +1,179 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SeriesItem component #render should render component 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    Array [
+      Object {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+  >
+    <View
+      dataSet={Object {}}
+      style={
+        Object {
+          "backgroundColor": "#fafafa",
+          "borderColor": "#e5e7eb",
+          "borderRadius": 6,
+          "marginBottom": 4,
+          "marginTop": 4,
+          "maxWidth": "100%",
+          "paddingBottom": 8,
+          "paddingLeft": 8,
+          "paddingRight": 8,
+          "paddingTop": 8,
+        }
+      }
+    >
+      <View
+        dataSet={Object {}}
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <Image
+          accessibilityLabel="poster"
+          alt="poster"
+          dataSet={Object {}}
+          defaultSource={
+            Object {
+              "testUri": "../../../assets/placeholder.jpg",
+            }
+          }
+          onError={[Function]}
+          resizeMode="cover"
+          source={
+            Object {
+              "height": 75,
+              "uri": "https://image.tmdb.org/t/p/w200/.url.jpg",
+              "width": 50,
+            }
+          }
+          style={
+            Object {
+              "maxWidth": "100%",
+            }
+          }
+        />
+        <View
+          dataSet={Object {}}
+          style={Object {}}
+        />
+        <View
+          dataSet={Object {}}
+          style={
+            Object {
+              "flex": 3,
+              "marginLeft": 8,
+            }
+          }
+        >
+          <Text
+            dataSet={Object {}}
+            style={
+              Object {
+                "backgroundColor": undefined,
+                "color": "#1f2937",
+                "fontFamily": undefined,
+                "fontSize": 20,
+                "fontStyle": "normal",
+                "fontWeight": "700",
+                "letterSpacing": 0,
+                "lineHeight": 30,
+                "textDecorationLine": undefined,
+              }
+            }
+          >
+            Peacemaker
+          </Text>
+          <View
+            dataSet={Object {}}
+            style={Object {}}
+          />
+          <Text
+            dataSet={Object {}}
+            style={
+              Object {
+                "backgroundColor": undefined,
+                "color": "#1f2937",
+                "fontFamily": undefined,
+                "fontSize": 14,
+                "fontStyle": "normal",
+                "fontWeight": "400",
+                "letterSpacing": 0,
+                "lineHeight": 21,
+                "textDecorationLine": undefined,
+              }
+            }
+          >
+            Apr 01, 2022
+          </Text>
+        </View>
+        <View
+          dataSet={Object {}}
+          style={Object {}}
+        />
+        <View
+          dataSet={Object {}}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#4ade80",
+              "borderRadius": 8,
+              "maxHeight": 40,
+              "minWidth": 40,
+              "paddingBottom": 4,
+              "paddingLeft": 4,
+              "paddingRight": 4,
+              "paddingTop": 4,
+            }
+          }
+        >
+          <Text
+            dataSet={Object {}}
+            ellipsizeMode="tail"
+            numberOfLines={15}
+            style={
+              Object {
+                "backgroundColor": undefined,
+                "color": "#1f2937",
+                "fontFamily": undefined,
+                "fontSize": 18,
+                "fontStyle": "normal",
+                "fontWeight": "700",
+                "letterSpacing": 0,
+                "lineHeight": 27,
+                "textDecorationLine": undefined,
+              }
+            }
+          >
+            8
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;

@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SeasonItem component #render should render component 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    Array [
+      Object {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    dataSet={Object {}}
+    style={
+      Object {
+        "marginBottom": 8,
+        "marginTop": 8,
+      }
+    }
+  >
+    <View
+      dataSet={Object {}}
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Image
+        accessibilityLabel="poster"
+        alt="poster"
+        dataSet={Object {}}
+        defaultSource={
+          Object {
+            "testUri": "../../../assets/placeholder.jpg",
+          }
+        }
+        onError={[Function]}
+        resizeMode="cover"
+        source={
+          Object {
+            "height": 100,
+            "uri": "https://image.tmdb.org/t/p/w200/.url.jpg",
+            "width": 70,
+          }
+        }
+        style={
+          Object {
+            "maxWidth": "100%",
+          }
+        }
+      />
+      <View
+        dataSet={Object {}}
+        style={Object {}}
+      />
+      <View
+        dataSet={Object {}}
+        style={
+          Object {
+            "flex": 1,
+            "marginLeft": 8,
+          }
+        }
+      >
+        <Text
+          dataSet={Object {}}
+          style={
+            Object {
+              "backgroundColor": undefined,
+              "color": "#404040",
+              "fontFamily": undefined,
+              "fontSize": 16,
+              "fontStyle": "normal",
+              "fontWeight": "700",
+              "letterSpacing": 0,
+              "lineHeight": 20,
+              "textDecorationLine": undefined,
+            }
+          }
+        >
+          Peacemaker
+        </Text>
+        <View
+          dataSet={Object {}}
+          style={Object {}}
+        />
+        <Text
+          dataSet={Object {}}
+          style={
+            Object {
+              "backgroundColor": undefined,
+              "color": "#1f2937",
+              "fontFamily": undefined,
+              "fontSize": 14,
+              "fontStyle": "normal",
+              "fontWeight": "400",
+              "letterSpacing": 0,
+              "lineHeight": 21,
+              "textDecorationLine": undefined,
+            }
+          }
+        >
+          2022 | 10 Episodes
+        </Text>
+        <View
+          dataSet={Object {}}
+          style={Object {}}
+        />
+        <Text
+          dataSet={Object {}}
+          style={
+            Object {
+              "backgroundColor": undefined,
+              "color": "#1f2937",
+              "fontFamily": undefined,
+              "fontSize": 12,
+              "fontStyle": "normal",
+              "fontWeight": "400",
+              "letterSpacing": 0,
+              "lineHeight": 18,
+              "textDecorationLine": undefined,
+            }
+          }
+        >
+          Peacemaker is not Pissmaker
+        </Text>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaProvider>
+`;
