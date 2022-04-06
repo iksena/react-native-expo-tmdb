@@ -20,8 +20,12 @@ export default {
     ],
     ios: {
       supportsTablet: true,
+      bundleIdentifier: 'lol.omg.sena',
+      buildNumber: '1.0.0',
     },
     android: {
+      bundleIdentifier: 'lol.omg.sena',
+      versionCode: 1,
       adaptiveIcon: {
         foregroundImage: './assets/adaptive-icon.png',
         backgroundColor: '#FFFFFF',
